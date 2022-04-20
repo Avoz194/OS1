@@ -95,3 +95,25 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//TODO: complete functions 
+uint64
+sys_pause_system(void)
+{
+  int n;
+  if(argint(0, &n) < 0)
+    return -1;
+  return pause_system(n);
+}
+
+
+uint64
+sys_kill_system(void)
+{
+  return kill_system();
+}
+
+uint64 sys_print_stats(void)
+{
+  return print_stats();
+}
